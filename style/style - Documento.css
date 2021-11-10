@@ -1,0 +1,141 @@
+Padrão de configuração Brasileira.
+@charset "UTF-8";
+Busca da fonte Bebas Neue no site do google. 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+Importando a fonte Idroid da pasta fontes.
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+Fazendo minha paleta de cores e fontes escolhida para o projeto.
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;  
+
+    --fonte-padrao: Arial, verdana, helvetica, san-serif;
+    --fonte-destaque:'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+Zerando o padrão da margem interior e exterior de todos as tags. 
+*{
+    margin: 0px;
+    padding: 0px;
+}
+Tratando o corpo da página como padrão de cor0 e fonte-padrão. 
+body{
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+Acima do meu menu temos a header com o texto centralizado, degrade de fundo, tamanho da altura min. de 150 px e margen interna do topo dos componente de 40 px.
+header{
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    padding-top: 40px;
+    
+}
+Tratamento do h1 dentro do Header, cor branco, tamanho da letra 3*16, fonte-destaque da letra, margem inferior externa de 20px com sombra no título.
+header > h1{ 
+    color: white;    
+    font-size: 3em;
+    font-family: var(--fonte-destaque);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.301);
+}
+Tratamento do Paragrafo, margem externa de 2 rem, fonte, tamanho da fonte, cor, espaço de lagura da caixa contida o páragrafo, margem interna direita e esquerda de 10px, margem externa automatica, que permite a centralização e a auto modelagem em diversos dispositivos. 
+header > p{
+    margin: 2rem; 
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+}
+Estilo do Menu, foi tratado a cor de fundo, a margem interna com 10px, altura do menu de 17 px e sobreado o texto.
+nav{    
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.349);
+    height: 17px;   
+}
+O link "a" dentro da nav, ou seja as opções do menu, segue os tratamentos zerando o padrão, alinhando no centro da box, dando uma margem interna de 10 px, cor, grossura da letra, aredondando as bordar da box e fazendo a mudança do :hover levar meio segundo.
+nav > a{
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition-duration: .5s;
+}
+Quando passar o mouse sobre o menu, o texto e o fundo muda de cor/tonalidade.
+
+nav >a:hover{
+    background-color: var(--cor0);
+    color:  var(--cor4);
+}
+
+O conteudo da página, vai ser um box de 1000px de largura maxima e 260 px de largura minima, centralizado automaticamente em todos os dispositivos e na cor branca,com as laterais das bordas inferiores aredondadas, com margem interna geral de 20px para não colar o texto e margem inferior externa de 30 px para separar a próxima box. 
+
+main{
+    background-color: white;
+    padding: 20px;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    margin: auto;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    min-width: 260px;
+    font-family: var(--fonte-padrao);
+}
+Tratamento para todos os títulos e sub títulos, margem interna do box de 1*16, cor-4 e font-android. 
+
+main h1, h2, h3{
+    font-family: var(--fonte-android);
+    margin: 1rem;
+    color:var(--cor4);
+}
+ Tratamento para palavras em discaque com a tag Strong, cor4, espessura da letra "bold" ou seja bem grossa.
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+
+}
+
+Os Paragrafos com o texto justificado, margem externa superir e inferior de 15px e laterais zeradas, tamanho da letra de 1*16 espaçamento entre as linhas de 2*16
+main p{
+    text-align: justify;
+    margin: 15px 0px;
+    text-indent: 1.5em;
+    font-size: 1em;
+    line-height: 2em;
+}
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 5px;
+}
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor4);
+}
+main img{
+    width: 100%;
+}
+main img#bugdroi{
+    max-width: 350px;
+    display: block;
+    margin: auto; 
+}
+aside > h1 {
+    font-family: var(--fonte-padrao);
+}
